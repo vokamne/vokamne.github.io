@@ -202,6 +202,40 @@
     gap: 5rem;
     align-items: start;
   }
+  .about-photo-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .about-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(20%) contrast(1.05);
+    transition: filter 0.4s ease, transform 0.4s ease;
+  }
+  .about-photo-wrap:hover img {
+    filter: grayscale(0%) contrast(1);
+    transform: scale(1.02);
+  }
+  .about-photo-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1rem 1.2rem;
+    background: linear-gradient(to top, rgba(10,10,10,0.9), transparent);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
   .about-text { color: var(--muted); font-size: 14px; line-height: 1.9; }
   .about-text p + p { margin-top: 1.2rem; }
   .about-text strong { color: var(--text); font-weight: 400; }
@@ -486,30 +520,36 @@
 <section id="about">
   <p class="section-label reveal">About</p>
   <div class="about-grid">
-    <div>
-      <h2 class="section-title reveal">Building worlds,<br><span style="color:var(--muted)">one level at a time.</span></h2>
-      <div class="about-text reveal">
-        <p>I'm a Game Development student at <strong>Kingston University</strong>, driven by the idea that great games are built by people who genuinely care about what they're making.</p>
-        <p>What I love most is the process — watching something grow from nothing into a world with its own feel and character. Whether it's writing code, shaping a level, or working through a problem with a team, I'm at my best when I'm <strong>building something that means something</strong>.</p>
-        <p>I enjoy <strong>collaborative development</strong> — the back and forth, the shared decisions, the moment when separate pieces finally come together. I work primarily in <strong>Unreal Engine 5</strong> with Blueprint and C++, and I'm always looking to grow across the full spectrum of game development.</p>
-      </div>
+    <div class="about-photo-wrap">
+      <img src="photo.JPG" alt="Volodymyr Cherepovskyi">
+      <div class="about-photo-label">Volodymyr Cherepovskyi — Kingston University</div>
     </div>
-    <div class="about-stats reveal">
-      <div class="stat">
-        <div class="stat-num">UE5</div>
-        <div class="stat-label">Primary Engine</div>
+    <div class="about-right">
+      <div>
+        <h2 class="section-title reveal">Building worlds,<br><span style="color:var(--muted)">one level at a time.</span></h2>
+        <div class="about-text reveal">
+          <p>I'm a Game Development student at <strong>Kingston University</strong>, driven by the idea that great games are built by people who genuinely care about what they're making.</p>
+          <p>What I love most is the process — watching something grow from nothing into a world with its own feel and character. Whether it's writing code, shaping a level, or working through a problem with a team, I'm at my best when I'm <strong>building something that means something</strong>.</p>
+          <p>I enjoy <strong>collaborative development</strong> — the back and forth, the shared decisions, the moment when separate pieces finally come together. I work primarily in <strong>Unreal Engine 5</strong> with Blueprint and C++, and I'm always looking to grow across the full spectrum of game development.</p>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-num">C++</div>
-        <div class="stat-label">Main Language</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">3D</div>
-        <div class="stat-label">Level Design</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">KU</div>
-        <div class="stat-label">Kingston University</div>
+      <div class="about-stats reveal">
+        <div class="stat">
+          <div class="stat-num">UE5</div>
+          <div class="stat-label">Primary Engine</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">C++</div>
+          <div class="stat-label">Main Language</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3D</div>
+          <div class="stat-label">Level Design</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">KU</div>
+          <div class="stat-label">Kingston University</div>
+        </div>
       </div>
     </div>
   </div>
